@@ -4,9 +4,11 @@ import getDatabase from '../helpers/db.ts';
 
 export class classWod {
     // #region Properties (4)
-
-    public hour: number;
-    public id: number;
+    
+    public id: number;   
+    public date: Date;
+    public fromHour: number;
+    public toHour: number;
     public limitUsers: number;
     public userIds: Array<string>;
 
@@ -14,11 +16,13 @@ export class classWod {
 
     // #region Constructors (1)
 
-    constructor(id: number,hour: number,
+    constructor(id: number, date: Date, fromHour: number, toHour: number,
     limitUsers: number,
     userIds: Array<string>) {
         this.id = id;
-        this.hour = hour;
+        this.date = date;
+        this.fromHour = fromHour;
+        this.toHour = toHour;
         this.limitUsers = limitUsers;
         this.userIds = userIds;
     }
